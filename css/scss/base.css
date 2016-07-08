@@ -1,0 +1,336 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+*:focus {
+  outline: none; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+a {
+  text-decoration: none;
+  outline: none; }
+
+a img {
+  border: none; }
+
+ol, ul {
+  list-style: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+input, textarea {
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: none;
+  outline: none;
+  border-radius: 0;
+  -webkit-appearance: none; }
+
+input[type="submit"], input[type="button"], input[type="reset"] {
+  cursor: pointer; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+.left {
+  float: left; }
+
+.right {
+  float: right; }
+
+.clear {
+  clear: both;
+  display: block;
+  height: 0;
+  overflow: hidden; }
+
+.clearfix {
+  zoom: 1; }
+
+.clearfix:after {
+  clear: both;
+  display: block;
+  height: 0;
+  content: "";
+  visibility: hidden; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  font-weight: normal; }
+
+body {
+  font-family: "Microsoft YaHei", sans-serif;
+  font-size: 14px;
+  color: #787878;
+  background-color: #ececec; }
+
+a {
+  color: #5f5f5f; }
+  a:active {
+    color: #5f5f5f; }
+  a:visited {
+    color: #5f5f5f; }
+  a:hover {
+    color: #858585; }
+
+input, textarea, button {
+  font-size: 14px;
+  font-family: "Microsoft YaHei", sans-serif;
+  color: #787878;
+  border: 1px solid #ccc; }
+
+.container {
+  width: 960px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 20px 2px gainsboro; }
+  .container h3 {
+    height: 40px;
+    line-height: 40px; }
+  .container .content {
+    padding: 20px;
+    border: 1px dashed #ccc; }
+    .container .content .operation {
+      padding: 10px; }
+      .container .content .operation .list .list-con {
+        float: left;
+        width: 50%;
+        height: 32px;
+        line-height: 32px;
+        margin-top: 10px; }
+        .container .content .operation .list .list-con .tit {
+          float: left;
+          margin-right: 10px; }
+        .container .content .operation .list .list-con .ipt {
+          display: block;
+          float: left;
+          width: 100px;
+          height: 20px;
+          line-height: 20px;
+          padding: 5px; }
+      .container .content .operation .btn-op {
+        display: block;
+        width: 120px;
+        height: 30px;
+        line-height: 30px;
+        margin-top: 20px;
+        text-align: center;
+        color: white;
+        background-color: #ee248d;
+        border-radius: 5px; }
+        .container .content .operation .btn-op:hover {
+          background-color: #c61e75; }
+
+.slider-wrap {
+  position: relative;
+  width: 918px;
+  height: 516px;
+  margin: 0 auto;
+  overflow: hidden; }
+  .slider-wrap .slider {
+    float: left; }
+    .slider-wrap .slider a {
+      position: absolute;
+      display: block;
+      width: 918px;
+      height: 516px; }
+      .slider-wrap .slider a img {
+        width: 100%;
+        height: 100%; }
+  .slider-wrap .tag {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 10;
+    width: 100%;
+    font-size: 0;
+    text-align: center; }
+    .slider-wrap .tag span {
+      display: inline-block;
+      border-radius: 999px;
+      cursor: pointer; }
+      .slider-wrap .tag span.on {
+        background-color: #5638d8; }
+  .slider-wrap .btn {
+    position: absolute;
+    top: 50%;
+    z-index: 10; }
+    .slider-wrap .btn.btn-left {
+      left: 10px; }
+    .slider-wrap .btn.btn-right {
+      right: 10px; }
+
+/*.slider-wrap {
+  position: relative;
+  width: 918px;
+  height: 516px;
+  margin: 0 auto;
+  overflow: hidden;
+  .slide {
+    position: absolute;
+    left: 0;
+    top: 0;
+    //z-index: 9;
+    a {
+      display: block;
+      float: left;
+      width: 918px;
+      height: 516px;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  .tag {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 10;
+    width: 100%;
+    font-size: 0;
+    text-align: center;
+    span {
+      display: inline-block;
+      border-radius: 999px;
+      cursor: pointer;
+      &.on {
+        background-color: rgba(86,56,216,1);
+      }
+    }
+  }
+  .btn {
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    &.btn-left {
+      left: 10px;
+    }
+    &.btn-right {
+      right: 10px;
+    }
+  }
+}*/
+/*.slide {
+  position: relative;
+  z-index: 9;
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  a {
+    position: absolute;
+    top: 0;
+    z-index: 9;
+    display: block;
+    width: 100%;
+    height: 100%;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .tag {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 10;
+    width: 100%;
+    font-size: 0;
+    text-align: center;
+    span {
+      display: inline-block;
+      border-radius: 999px;
+      cursor: pointer;
+      &.on {
+        background-color: rgba(86,56,216,1);
+      }
+    }
+  }
+  .btn {
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    &.btn-left {
+      left: 10px;
+    }
+    &.btn-right {
+      right: 10px;
+    }
+  }
+}*/
+.roll ul {
+  float: left; }
+  .roll ul a {
+    display: block;
+    float: left;
+    margin-right: 5px; }
+    .roll ul a img {
+      display: block; }
+
+.drop {
+  position: relative;
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+  border: 1px solid #ccc; }
+  .drop input {
+    display: block;
+    float: left;
+    width: 60px;
+    height: 20px;
+    line-height: 20px;
+    padding: 5px;
+    border: none;
+    cursor: pointer; }
+  .drop i {
+    display: block;
+    float: left;
+    width: 29px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-left: 1px solid #ccc;
+    cursor: pointer; }
+  .drop ul {
+    display: none;
+    position: absolute;
+    left: -1px;
+    top: 30px;
+    z-index: 100;
+    width: 100px;
+    border: 1px solid #ccc; }
+    .drop ul li {
+      height: 30px;
+      line-height: 30px;
+      padding: 0 5px;
+      background-color: #fff;
+      cursor: pointer; }
+
+/*# sourceMappingURL=base.css.map */

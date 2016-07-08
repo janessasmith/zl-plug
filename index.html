@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>常用组件集合包</title>
+    <meta name="Author" content="JanessaSmith">
+    <meta name="keywords" content="常见 组件 效果">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <link rel="stylesheet" href="css/scss/base.css"/>
+
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.slider.js"></script>
+    <script type="text/javascript" src="js/select.js"></script>
+    <script type="text/javascript" src="js/operation.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- 图片轮播 -->
+        <section>
+            <h3>图片轮播</h3>
+            <div class="content">
+                <div class="slider-wrap">
+                    <ul class="slider" e-fun ="slider">
+                        <a href="javascript:;" class="show"><img src="images/1.jpg" alt="" /></a>
+                        <a href="javascript:;"><img src="images/2.jpg" alt="" /></a>
+                        <a href="javascript:;"><img src="images/3.jpg" alt="" /></a>
+                        <a href="javascript:;"><img src="images/4.jpg" alt="" /></a>
+                        <a href="javascript:;"><img src="images/5.jpg" alt="" /></a>
+                    </ul>
+                    <div class="tag"></div>
+                    <div class="btn btn-left"></div>
+                    <div class="btn btn-right"></div>
+                </div>
+                <!-- 操作 -->
+                <div class="operation">
+                    <h3>基本设置</h3>
+                    <div class="list clearfix">
+                        <div class="list-con">
+                            <span class="tit">timeout(时间间隔)：</span>
+                            <input type="text" class="ipt" value="3000"/>
+                        </div>
+                        <div class="list-con">
+                            <span class="tit">moveTime(动画时间)：</span>
+                            <input type="text" class="ipt" value="300"/>
+                        </div>
+                        <div class="list-con">
+                            <span class="tit">autoSlider(是否自动轮播)：</span>
+                            <div class="left drop" e-fun= drop>
+                                <input type="text" name="true" value="true"/>
+                                <!--<span name="true">true</span>-->
+                                <i class="fa fa-caret-down"></i>
+                                <ul>
+                                    <li>true</li>
+                                    <li>false</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="list-con">
+                            <span class="tit">moveStyle(动画效果)：</span>
+                            <div class="left drop" e-fun= drop>
+                                <input type="text" value="slide"/>
+                                <!--<span>slide</span>-->
+                                <i class="fa fa-caret-down"></i>
+                                <ul>
+                                    <li>slide</li>
+                                    <li>fade</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="list-con">
+                            <span class="tit">addTag(是否创建圆点标记)：</span>
+                            <div class="left drop" e-fun= drop>
+                                <input type="text" value="true"/>
+                                <!--<span>true</span>-->
+                                <i class="fa fa-caret-down"></i>
+                                <ul>
+                                    <li>true</li>
+                                    <li>false</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="list-con">
+                            <span class="tit">tagSize(圆点标记的尺寸)：</span>
+                            <input type="text" class="ipt" value="12"/>
+                        </div>
+                        <div class="list-con">
+                            <span class="tit">tagDefaultBg(圆点标记的默认背景颜色)：</span>
+                            <input type="text" class="ipt" value="#fff"/>
+                        </div>
+                        <div class="list-con">
+                            <span class="tit">tagActiveBg(圆点标记的选中背景颜色)：</span>
+                            <input type="text" class="ipt" value="#5638d8"/>
+                        </div>
+                        <div class="list-con">
+                            <span class="tit">btnShow(是否显示左右按钮)：</span>
+                            <div class="left drop" e-fun= drop>
+                                <input type="text" value="true"/>
+                                <!--<span>true</span>-->
+                                <i class="fa fa-caret-down"></i>
+                                <ul>
+                                    <li>true</li>
+                                    <li>false</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="list-con">
+                            <span class="tit">btnBg(按钮的背景)：</span>
+                            <input type="text" class="ipt" value="rgba(255,255,255,.6)"/>
+                        </div>
+                        <div class="list-con">
+                            <span class="tit">btnW(按钮的宽度)：</span>
+                            <input type="text" class="ipt" value="30"/>
+                        </div>
+                        <div class="list-con">
+                            <span class="tit">btnH(按钮的高度)：</span>
+                            <input type="text" class="ipt" value="60"/>
+                        </div>
+                    </div>
+                    <a href="javascript:;" class="btn-op">GO</a>
+                </div>
+            </div>
+        </section>
+        <!--<script type="text/javascript">
+            $(document).ready(function() {
+                $(".slider").slider({
+                    moveMode: 'fade',
+                    autoSlide:  false
+                });
+            });
+        </script>-->
+
+        <!--Tab导航切换-->
+        <section>
+            <h3>Tab导航切换</h3>
+            <div class="content">
+                <div class="tab" e-fun="tab">
+                    <div>
+                        <ul>
+                            <a href="javascript:;"></a>
+                            <a href="javascript:;"></a>
+                            <a href="javascript:;"></a>
+                        </ul>
+                    </div>
+                    <div>
+                        <p>
+                            <a href=""><img src="" alt=""/></a>
+                        </p>
+                        <p></p>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

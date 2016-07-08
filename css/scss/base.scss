@@ -1,0 +1,514 @@
+
+//*********************************************************************//
+//                             reset                                   //
+//*********************************************************************//
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+*:focus {
+  outline: none;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+a {
+  text-decoration:none;
+  outline:none;
+}
+a img {
+  border:none;
+}
+ol, ul {
+  list-style: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+input, textarea {
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: none;
+  outline:none;
+  border-radius: 0;
+  -webkit-appearance:none;
+}
+input[type="submit"], input[type="button"], input[type="reset"] {
+  cursor: pointer;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+
+.clear {
+  clear:both;
+  display:block;
+  height:0;
+  overflow:hidden;
+}
+.clearfix {
+  zoom:1;
+}
+.clearfix:after {
+  clear:both;
+  display:block;
+  height:0;
+  content:"";
+  visibility:hidden;
+}
+
+
+//*********************************************************************//
+//                              settings                               //
+//*********************************************************************//
+
+
+// value settings
+$dark1: rgba(0,0,0,0.87);
+$dark2: rgba(0,0,0,0.54);
+$dark3: rgba(0,0,0,0.26);
+$dark4: rgba(0,0,0,0.12);
+$dark5: rgba(0,0,0,0.5);
+$light1: rgba(255,255,255,1);
+$light2: rgba(255,255,255,0.6);
+$light3: rgba(255,255,255,0.26);
+$light4: rgba(255,255,255,0.12);
+
+$color1: rgba(120,120,120,1);
+
+$bg1: #fff;
+$bg2: #ececec;
+$bg3: #ccc;
+
+$btnBg: #ee248d;
+$btnBgHover: #c61e75;
+
+
+
+$primary1: #5f5f5f;
+$primary2: #afd9b6;
+$primary3: #d4e9dd;
+$accent1: #d0c3ae;
+$accent2: #e8e4d9;
+$accent3: #75484e;
+$shadow1: 0 0 20px 2px rgba(220,220,220,1);
+$easing1: cubic-bezier(0.15, 0.95, 0.41, 0.95);
+
+
+// fonts set
+$primary-font: 'Microsoft YaHei', sans-serif;
+$normal-size: 14px;
+
+
+
+// responsive break points
+$phone_portrait-max: 29.99em;  // 479px
+$phone_landscape-min: 30em;  // 480px
+$phone_landscape-max: 47.99em;  // 767px
+$pad_portrait-min: 48em;  // 768px
+$pad_portrait-max: 63.99em;  // 1023px
+$pad_landscape-min: 64em;  // 1024px
+$pad_landscape-max: 74.99em;  // 1199px
+$pc-min: 75em;  // 1200px
+
+
+// functions
+@mixin box-sizing ($value) {
+  -webkit-box-sizing: $value;
+  box-sizing: $value;
+}
+@mixin transform ($value) {
+  -webkit-transform: $value;
+  transform: $value;
+}
+@mixin transform-origin ($value) {
+  -webkit-transform-origin: $value;
+  transform-origin: $value;
+}
+@mixin transition ($value) {
+  -webkit-transition: $value;
+  transition: $value;
+}
+@mixin transition-transform ($value1,$value2) {
+  -webkit-transition: -webkit-transform $value1 $value2;
+  transition: transform $value1 $value2;
+}
+@mixin prefix-transition ($value) {
+  -webkit-transition: -webkit-$value;
+  transition: $value;
+}
+@mixin animation ($value) {
+  -webkit-animation: $value;
+  animation: $value;
+}
+@mixin display-flex () {
+  display: -webkit-flex;
+  display: flex;
+}
+@mixin flex-flow ($value) {
+  -webkit-flex-flow: $value;
+  flex-flow: $value;
+}
+@mixin order ($value) {
+  -webkit-order: $value;
+  order: $value;
+}
+@mixin flex ($value) {
+  -webkit-flex: $value;
+  flex: $value;
+}
+@mixin justify-content ($value) {
+  -webkit-justify-content: $value;
+  justify-content: $value;
+}
+@mixin align-items ($value) {
+  -webkit-align-items: $value;
+  align-items: $value;
+}
+@mixin align-content ($value) {
+  -webkit-align-content: $value;
+  align-content: $value;
+}
+@mixin aColor ($value) {
+  color: $value;
+  &:active {
+    color: $value;
+  }
+  &:visited {
+    color: $value;
+  }
+  &:hover {
+    color: lighten($value,15%);
+  }
+}
+
+
+
+//*********************************************************************//
+//                               global                                //
+//*********************************************************************//
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+body {
+  font-family: $primary-font;
+  font-size: $normal-size;
+  color: $color1;
+  background-color: $bg2;
+}
+a {
+  @include aColor ($primary1);
+}
+input, textarea, button {
+  font-size: $normal-size;
+  font-family: $primary-font;
+  color: $color1;
+  border: 1px solid $bg3;
+}
+
+.container {
+  width: 960px;
+  margin: 20px auto;
+  padding:20px;
+  background-color: $bg1;
+  box-shadow: $shadow1;
+  h3 {
+    height: 40px;
+    line-height: 40px;
+  }
+  .content {
+    padding: 20px;
+    border: 1px dashed $bg3;
+    .operation {
+      padding: 10px;
+      .list {
+        .list-con {
+          float: left;
+          width: 50%;
+          height: 32px;
+          line-height: 32px;
+          margin-top: 10px;
+          .tit {
+            float: left;
+            margin-right: 10px;
+          }
+          .ipt {
+            display: block;
+            float: left;
+            width: 100px;
+            height: 20px;
+            line-height: 20px;
+            padding: 5px;
+          }
+        }
+      }
+      .btn-op {
+        display: block;
+        width: 120px;
+        height: 30px;
+        line-height: 30px;
+        margin-top: 20px;
+        text-align: center;
+        color: $light1;
+        background-color: $btnBg;
+        border-radius: 5px;
+        &:hover {
+        background-color: $btnBgHover;
+      }
+      }
+    }
+  }
+}
+
+
+//*********************************************************************//
+//                               slider                                //
+//*********************************************************************//
+
+.slider-wrap {
+  position: relative;
+  width: 918px;
+  height: 516px;
+  margin: 0 auto;
+  overflow: hidden;
+  .slider {
+    float: left;
+    a {
+      position: absolute;
+      display: block;
+      width: 918px;
+      height: 516px;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  .tag {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 10;
+    width: 100%;
+    font-size: 0;
+    text-align: center;
+    span {
+      display: inline-block;
+      border-radius: 999px;
+      cursor: pointer;
+      &.on {
+        background-color: rgba(86,56,216,1);
+      }
+    }
+  }
+  .btn {
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    &.btn-left {
+      left: 10px;
+    }
+    &.btn-right {
+      right: 10px;
+    }
+  }
+}
+
+// slide.html
+/*.slider-wrap {
+  position: relative;
+  width: 918px;
+  height: 516px;
+  margin: 0 auto;
+  overflow: hidden;
+  .slide {
+    position: absolute;
+    left: 0;
+    top: 0;
+    //z-index: 9;
+    a {
+      display: block;
+      float: left;
+      width: 918px;
+      height: 516px;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  .tag {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 10;
+    width: 100%;
+    font-size: 0;
+    text-align: center;
+    span {
+      display: inline-block;
+      border-radius: 999px;
+      cursor: pointer;
+      &.on {
+        background-color: rgba(86,56,216,1);
+      }
+    }
+  }
+  .btn {
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    &.btn-left {
+      left: 10px;
+    }
+    &.btn-right {
+      right: 10px;
+    }
+  }
+}*/
+
+
+/*.slide {
+  position: relative;
+  z-index: 9;
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  a {
+    position: absolute;
+    top: 0;
+    z-index: 9;
+    display: block;
+    width: 100%;
+    height: 100%;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .tag {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 10;
+    width: 100%;
+    font-size: 0;
+    text-align: center;
+    span {
+      display: inline-block;
+      border-radius: 999px;
+      cursor: pointer;
+      &.on {
+        background-color: rgba(86,56,216,1);
+      }
+    }
+  }
+  .btn {
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    &.btn-left {
+      left: 10px;
+    }
+    &.btn-right {
+      right: 10px;
+    }
+  }
+}*/
+
+//*********************************************************************//
+//                               roll                                  //
+//*********************************************************************//
+.roll {
+  ul {
+    float: left;
+    a {
+      display: block;
+      float: left;
+      margin-right: 5px;
+      img {
+        display: block;
+      }
+    }
+  }
+}
+
+
+//*********************************************************************//
+//                               drop                                  //
+//*********************************************************************//
+.drop {
+  position: relative;
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+  border: 1px solid $bg3;
+  input {
+    display: block;
+    float: left;
+    width: 60px;
+    height: 20px;
+    line-height: 20px;
+    padding: 5px;
+    border: none;
+    cursor: pointer;
+  }
+  i {
+    display: block;
+    float:left;
+    width: 29px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-left: 1px solid $bg3;
+    cursor: pointer;
+  }
+  ul {
+    display: none;
+    position: absolute;
+    left: -1px;
+    top: 30px;
+    z-index : 100;
+    width: 100px;
+    border: 1px solid $bg3;
+    li {
+      height: 30px;
+      line-height: 30px;
+      padding: 0 5px;
+      background-color: $bg1;
+      cursor: pointer;
+    }
+  }
+}
